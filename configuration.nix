@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -94,8 +94,8 @@
   };
 
   home-manager = {
-    specialArgs = { inherit inputs; };
-    users = { "daikon" = "import ./home.nix" };
+    extraSpecialArgs = { inherit inputs; };
+    users = { "daikon" = "import ./home.nix"; };
   };
 
   # Allow unfree packages

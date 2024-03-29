@@ -111,6 +111,7 @@
   environment.systemPackages = with pkgs; [
     #KDE stuff:
     libsForQt5.bismuth
+    polybar
     # terminal
     vim
     alacritty
@@ -124,10 +125,12 @@
     # apps :
     vscode-fhs
     steam
+    steam-run
     blender
     gimp
     nano
     unzip
+    xivlauncher
     # compilers :
     libgccjit
     dotnet-sdk_8
@@ -144,6 +147,10 @@
   #};
 
   programs.neovim = {
+    enable = true;
+  };
+
+  programs.steam = {
     enable = true;
   };
 

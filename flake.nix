@@ -19,7 +19,14 @@
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
-          ./configuration.nix
+          ./hosts/default/configuration.nix
+          #inputs.home-manager.nixosModules.default
+        ];
+      };
+      nixosConfigurations.hyprland = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/hyprland/configuration.nix
           #inputs.home-manager.nixosModules.default
         ];
       };

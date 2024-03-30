@@ -53,6 +53,12 @@
   services.xserver.displayManager.defaultSession = "plasma";
   services.xserver.displayManager.sddm.wayland.enable = true;
 
+  #Fonts / Extras:
+  fonts.packages = with pkgs; [
+    fira-code
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+  ];
+
   # Configure keymap in X11
   services.xserver.xkb.layout = "dk";
   services.xserver.xkb.variant = "";
@@ -137,14 +143,9 @@
     gcc_multi
     libgcc
     binutils
-    libnotify
   ];
 
-  #programs.hyprland = {
-  #  enable = true;
-  #  enableNvidiaPatches = true;
-  #  xwayland.enable = true;
-  #};
+  
 
   programs.neovim = {
     enable = true;
